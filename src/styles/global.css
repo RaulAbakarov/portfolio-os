@@ -1576,7 +1576,7 @@ html, body, #root {
 /* ========================= */
 
 .fade-in {
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.3s ease both;
 }
 
 @keyframes fadeIn {
@@ -1585,7 +1585,7 @@ html, body, #root {
 }
 
 .slide-up {
-  animation: slideUp 0.4s ease;
+  animation: slideUp 0.4s ease both;
 }
 
 @keyframes slideUp {
@@ -1729,6 +1729,7 @@ html, body, #root {
   }
 
   .window-content {
+    flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -1794,11 +1795,16 @@ html, body, #root {
 
   /* About App */
   .about-app {
-    padding: 16px;
+    padding: 0;
   }
 
   .about-hero {
     padding: 20px 16px;
+  }
+
+  .about-avatar {
+    width: 80px;
+    height: 80px;
   }
 
   .about-avatar img {
@@ -1810,9 +1816,17 @@ html, body, #root {
     font-size: 20px;
   }
 
+  .about-section {
+    padding: 16px 14px;
+  }
+
   .about-stats {
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
+  }
+
+  .about-stat {
+    padding: 10px 6px;
   }
 
   .about-stat-value {
@@ -1824,15 +1838,17 @@ html, body, #root {
   }
 
   .about-section-title {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .about-bio {
     font-size: 12px;
+    line-height: 1.7;
   }
 
   .about-fun-fact {
     font-size: 11px;
+    padding: 8px 10px;
   }
 
   /* Projects App */
@@ -1844,30 +1860,60 @@ html, body, #root {
 
   .projects-toolbar {
     padding: 8px;
-    gap: 8px;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .projects-path {
+    font-size: 10px;
+    padding: 4px 8px;
   }
 
   .projects-list {
     grid-template-columns: 1fr;
     padding: 8px;
     gap: 8px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .project-card {
     padding: 14px;
+    overflow: visible;
+  }
+
+  .project-card-header {
+    margin-bottom: 8px;
+  }
+
+  .project-card-icon {
+    font-size: 22px;
   }
 
   .project-card h3 {
     font-size: 14px;
+    margin-bottom: 4px;
+    display: block;
   }
 
   .project-card p {
     font-size: 11px;
     margin-bottom: 10px;
+    display: block;
   }
 
-  .project-card-icon {
-    font-size: 22px;
+  .project-card-tags {
+    gap: 4px;
+  }
+
+  .project-tag {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+
+  .project-card-link {
+    font-size: 9px;
+    padding: 2px 6px;
   }
 
   /* Skills App */
@@ -1895,17 +1941,48 @@ html, body, #root {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    padding: 0 8px;
   }
 
   .skills-tabs::-webkit-scrollbar {
     display: none;
   }
 
+  .skills-tab {
+    padding: 6px 10px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .skills-content {
+    padding: 8px 10px;
+  }
+
   .skills-table-header,
   .skill-row {
-    grid-template-columns: 36px 1fr 50px;
+    grid-template-columns: 30px 1fr 50px;
     padding: 6px 8px;
     font-size: 11px;
+  }
+
+  .skills-table-header {
+    font-size: 9px;
+  }
+
+  .skill-icon {
+    font-size: 16px;
+  }
+
+  .skill-name {
+    font-size: 12px;
+  }
+
+  .skill-name small {
+    font-size: 9px;
+  }
+
+  .skill-level {
+    font-size: 10px;
   }
 
   .skill-category,
@@ -1922,6 +1999,11 @@ html, body, #root {
 
   .contact-sidebar {
     padding: 10px;
+  }
+
+  .contact-compose-btn {
+    font-size: 11px;
+    padding: 8px;
   }
 
   .contact-body {
@@ -1950,14 +2032,16 @@ html, body, #root {
   .contact-quote {
     font-size: 11px;
     padding: 12px;
+    margin-top: 16px;
   }
 
   /* Terminal App */
-  .terminal-app {
+  .terminal {
+    padding: 12px;
     font-size: 12px;
   }
 
-  .terminal-input-line input {
+  .terminal-input {
     font-size: 12px;
   }
 
@@ -1978,11 +2062,45 @@ html, body, #root {
   /* Boot Screen */
   .boot-bios {
     padding: 16px;
+  }
+
+  .boot-bios .bios-line {
     font-size: 11px;
   }
 
   .boot-logo {
-    font-size: 36px;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .boot-progress-container {
+    width: 260px;
+  }
+
+  .boot-status {
+    font-size: 10px;
+  }
+
+  .boot-skip {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  /* BSOD */
+  .bsod {
+    padding: 30px 20px;
+  }
+
+  .bsod-emoticon {
+    font-size: 72px;
+  }
+
+  .bsod h2 {
+    font-size: 18px;
+  }
+
+  .bsod p {
+    font-size: 12px;
   }
 
   /* Clippy */
@@ -1996,11 +2114,31 @@ html, body, #root {
     font-size: 11px;
   }
 
+  .clippy-body {
+    font-size: 36px;
+  }
+
+  /* Error Popup */
+  .error-popup-inner {
+    min-width: unset;
+    width: calc(100vw - 24px);
+  }
+
+  .error-popup-body {
+    padding: 14px;
+  }
+
+  .error-popup-icon {
+    font-size: 24px;
+  }
+
   /* Notifications */
   .notification {
     right: 8px;
+    left: 8px;
     top: 8px;
-    max-width: calc(100vw - 16px);
+    max-width: unset;
+    min-width: unset;
   }
 }
 
@@ -2014,6 +2152,10 @@ html, body, #root {
     grid-template-columns: 1fr 1fr;
   }
 
+  .about-stat-value {
+    font-size: 16px;
+  }
+
   .project-card-links {
     flex-direction: column;
     gap: 3px;
@@ -2022,6 +2164,20 @@ html, body, #root {
   .start-menu-item {
     padding: 8px 12px;
     font-size: 11px;
+  }
+
+  .start-menu-header {
+    padding: 14px;
+  }
+
+  .start-menu-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .start-menu-user h3 {
+    font-size: 13px;
   }
 }
 
