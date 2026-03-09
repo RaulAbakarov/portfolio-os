@@ -27,7 +27,7 @@ const BIOS_LINES = [
   { text: '  WARNING: Excessive git commit history detected', cls: 'warning' },
   { text: '  CRITICAL: Coffee levels dangerously low', cls: 'danger' },
   { text: '', cls: '' },
-  { text: 'All systems operational. Booting RAUL OS...', cls: 'accent' },
+  { text: 'All systems operational. Booting Portfolio OS...', cls: 'accent' },
 ]
 
 const LOADING_MESSAGES = [
@@ -106,7 +106,7 @@ export default function BootScreen({ onComplete }) {
 
       {stage === 'loading' && (
         <div className="boot-loader fade-in">
-          <div className="boot-logo">RAUL OS</div>
+          <div className="boot-logo">Portfolio OS</div>
           <div className="boot-progress-container">
             <div
               className="boot-progress-bar"

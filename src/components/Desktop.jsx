@@ -100,7 +100,7 @@ export default function Desktop({ triggerBSOD }) {
     const timer = setTimeout(() => {
       setNotification({
         icon: '👋',
-        title: 'Welcome to RAUL OS',
+        title: 'Welcome to Portfolio OS',
         body: 'Double-click desktop icons to explore. Try the Terminal for a retro experience!',
       })
     }, 1000)
@@ -294,7 +294,7 @@ export default function Desktop({ triggerBSOD }) {
             </div>
           </div>
           <div className="start-menu-footer">
-            <span>RAUL OS v3.14</span>
+            <span>Portfolio OS v3.14</span>
             <span
               className="start-menu-power"
               onClick={() => triggerBSOD('VOLUNTARY_SHUTDOWN')}

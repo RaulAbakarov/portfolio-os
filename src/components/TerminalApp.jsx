@@ -115,7 +115,7 @@ const COMMANDS = {
   neofetch: () => [
     { text: '        ██████████████        raul@portfolio', cls: 'accent' },
     { text: '      ██              ██      ──────────────────', cls: 'accent' },
-    { text: '    ██  ████████████  ██      OS: RAUL OS v3.14', cls: 'accent' },
+    { text: '    ██  ████████████  ██      OS: Portfolio OS v3.14', cls: 'accent' },
     { text: '    ██  ██        ██  ██      Host: The Internet', cls: '' },
     { text: '    ██  ████████████  ██      Kernel: React 18', cls: '' },
     { text: '    ██                ██      Uptime: ∞ hours', cls: '' },
@@ -158,7 +158,7 @@ function cowsay(message) {
 
 export default function TerminalApp({ onCommand }) {
   const [lines, setLines] = useState([
-    { text: 'RAUL OS Terminal v3.14 — Type "help" for commands', cls: 'accent' },
+    { text: 'Portfolio OS Terminal v3.14 — Type "help" for commands', cls: 'accent' },
     { text: '─────────────────────────────────────────────────', cls: 'accent' },
     { text: '' },
   ])
