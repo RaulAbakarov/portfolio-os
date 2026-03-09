@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Window from './Window'
 import TerminalApp from './TerminalApp'
 import AboutApp from './AboutApp'
@@ -7,7 +7,6 @@ import SkillsApp from './SkillsApp'
 import ContactApp from './ContactApp'
 import SecretApp from './SecretApp'
 import Clippy from './Clippy'
-import ErrorPopup from './ErrorPopup'
 import MatrixRain from './MatrixRain'
 import Notification from './Notification'
 
@@ -76,12 +75,10 @@ export default function Desktop({ triggerBSOD }) {
   const [focusedWindow, setFocusedWindow] = useState('about')
   const [startMenuOpen, setStartMenuOpen] = useState(false)
   const [showClippy, setShowClippy] = useState(false)
-  const [showError, setShowError] = useState(false)
   const [showMatrix, setShowMatrix] = useState(false)
   const [notification, setNotification] = useState(null)
   const [clock, setClock] = useState('')
   const [clockDate, setClockDate] = useState('')
-  const errorCountRef = useRef(0)
 
   // Clock
   useEffect(() => {
@@ -114,17 +111,6 @@ export default function Desktop({ triggerBSOD }) {
     }, 15000)
     return () => clearTimeout(timer)
   }, [])
-
-  // Random error popup
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (errorCountRef.current < 2) {
-        setShowError(true)
-        errorCountRef.current++
-      }
-    }, 25000 + Math.random() * 20000)
-    return () => clearTimeout(timer)
-  }, [showError])
 
   const openApp = useCallback((appId) => {
     if (!openWindows.includes(appId)) {
@@ -359,9 +345,6 @@ export default function Desktop({ triggerBSOD }) {
 
       {/* Clippy */}
       {showClippy && <Clippy onDismiss={() => setShowClippy(false)} />}
-
-      {/* Error Popup */}
-      {showError && <ErrorPopup onClose={() => setShowError(false)} />}
 
       {/* Notification */}
       {notification && (
