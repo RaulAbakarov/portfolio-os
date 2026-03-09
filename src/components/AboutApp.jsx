@@ -4,8 +4,11 @@ export default function AboutApp() {
       <div className="about-hero">
         <div className="about-avatar">
           <img
-            src="https://avatars.githubusercontent.com/u/130228615?v=4"
+            src="https://avatars.githubusercontent.com/u/130228615?v=4&s=160"
             alt="Raul Abakarov"
+            loading="lazy"
+            width="120"
+            height="120"
           />
           <div className="about-avatar-ring" />
         </div>

@@ -1,7 +1,8 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, lazy, Suspense } from 'react'
 import BootScreen from './components/BootScreen'
-import Desktop from './components/Desktop'
-import BSOD from './components/BSOD'
+
+const Desktop = lazy(() => import('./components/Desktop'))
+const BSOD = lazy(() => import('./components/BSOD'))
 
 export default function App() {
   const [phase, setPhase] = useState('boot') // boot | desktop | bsod
@@ -25,8 +26,16 @@ export default function App() {
   }
 
   if (phase === 'bsod') {
-    return <BSOD message={bsodMessage} onDismiss={dismissBSOD} />
+    return (
+      <Suspense fallback={null}>
+        <BSOD message={bsodMessage} onDismiss={dismissBSOD} />
+      </Suspense>
+    )
   }
 
-  return <Desktop triggerBSOD={triggerBSOD} />
+  return (
+    <Suspense fallback={null}>
+      <Desktop triggerBSOD={triggerBSOD} />
+    </Suspense>
+  )
 }
