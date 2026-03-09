@@ -23,9 +23,11 @@ export default function Window({
   const handleMouseDown = useCallback((e) => {
     if (e.target.closest('.window-controls')) return
     isDragging.current = true
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY
     dragOffset.current = {
-      x: e.clientX - pos.x,
-      y: e.clientY - pos.y,
+      x: clientX - pos.x,
+      y: clientY - pos.y,
     }
     onFocus?.(id)
     e.preventDefault()
@@ -34,9 +36,11 @@ export default function Window({
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!isDragging.current) return
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY
       setPos({
-        x: e.clientX - dragOffset.current.x,
-        y: Math.max(0, e.clientY - dragOffset.current.y),
+        x: clientX - dragOffset.current.x,
+        y: Math.max(0, clientY - dragOffset.current.y),
       })
     }
     const handleMouseUp = () => {
@@ -44,9 +48,13 @@ export default function Window({
     }
     window.addEventListener('mousemove', handleMouseMove)
     window.addEventListener('mouseup', handleMouseUp)
+    window.addEventListener('touchmove', handleMouseMove, { passive: false })
+    window.addEventListener('touchend', handleMouseUp)
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('mouseup', handleMouseUp)
+      window.removeEventListener('touchmove', handleMouseMove)
+      window.removeEventListener('touchend', handleMouseUp)
     }
   }, [])
 
@@ -76,7 +84,7 @@ export default function Window({
       style={{ ...style, zIndex: focused ? 100 : 50 }}
       onMouseDown={() => onFocus?.(id)}
     >
-      <div className="window-titlebar" onMouseDown={handleMouseDown}>
+      <div className="window-titlebar" onMouseDown={handleMouseDown} onTouchStart={handleMouseDown}>
         <div className="window-title">
           <span className="window-title-icon">{icon}</span>
           <span className="window-title-text">{title}</span>

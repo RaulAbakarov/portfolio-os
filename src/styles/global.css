@@ -1662,30 +1662,124 @@ html, body, #root {
 /* ========================= */
 
 @media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .window,
+  .taskbar,
+  .start-menu,
+  .notification {
+    backdrop-filter: none;
+  }
+
+  .window {
+    background: var(--bg-window);
+  }
+
+  .taskbar {
+    background: rgba(10, 10, 15, 0.98);
+  }
+
   .desktop-icons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 4px;
-    left: 10px;
-    right: 10px;
-    top: 10px;
+    left: 8px;
+    right: 8px;
+    top: 8px;
+  }
+
+  .desktop-icon {
+    width: auto;
+    padding: 8px 4px;
+  }
+
+  .desktop-icon-img {
+    width: 40px;
+    height: 40px;
+    font-size: 26px;
+  }
+
+  .desktop-icon-label {
+    font-size: 9px;
   }
 
   .window {
     position: fixed !important;
     inset: 0 !important;
     width: 100% !important;
-    height: calc(100% - 48px) !important;
+    height: calc(100% - 44px) !important;
     border-radius: 0;
     min-width: unset;
+    min-height: unset;
+  }
+
+  .window-titlebar {
+    height: 34px;
+    padding: 0 10px;
+  }
+
+  .window-title-text {
+    font-size: 11px;
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .window-content {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .taskbar {
     height: 44px;
+    padding: 0 8px;
+    gap: 2px;
+  }
+
+  .taskbar-start {
+    padding: 6px 10px;
+    margin-right: 4px;
   }
 
   .taskbar-start-text {
     display: none;
+  }
+
+  .taskbar-divider {
+    margin: 0 4px;
+  }
+
+  .taskbar-apps {
+    gap: 2px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .taskbar-apps::-webkit-scrollbar {
+    display: none;
+  }
+
+  .taskbar-app {
+    padding: 4px 8px;
+    font-size: 0;
+    gap: 0;
+  }
+
+  .taskbar-app-icon {
+    font-size: 18px;
+  }
+
+  .taskbar-tray {
+    gap: 8px;
+    padding-left: 8px;
+  }
+
+  .taskbar-clock {
+    font-size: 10px;
   }
 
   .start-menu {
@@ -1693,25 +1787,250 @@ html, body, #root {
     right: 0;
     width: auto;
     margin: 0 8px;
-    bottom: 52px;
+    bottom: 48px;
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  /* About App */
+  .about-app {
+    padding: 16px;
+  }
+
+  .about-hero {
+    padding: 20px 16px;
+  }
+
+  .about-avatar img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .about-name {
+    font-size: 20px;
   }
 
   .about-stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .about-stat-value {
+    font-size: 18px;
+  }
+
+  .about-stat-label {
+    font-size: 9px;
+  }
+
+  .about-section-title {
+    font-size: 10px;
+  }
+
+  .about-bio {
+    font-size: 12px;
+  }
+
+  .about-fun-fact {
+    font-size: 11px;
+  }
+
+  /* Projects App */
+  .projects-app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projects-toolbar {
+    padding: 8px;
+    gap: 8px;
   }
 
   .projects-list {
     grid-template-columns: 1fr;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .project-card {
+    padding: 14px;
+  }
+
+  .project-card h3 {
+    font-size: 14px;
+  }
+
+  .project-card p {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .project-card-icon {
+    font-size: 22px;
+  }
+
+  /* Skills App */
+  .skills-app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skills-header {
+    padding: 10px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .skills-header-title {
+    font-size: 11px;
+  }
+
+  .skills-header-stats {
+    font-size: 10px;
+  }
+
+  .skills-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .skills-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .skills-table-header,
   .skill-row {
-    grid-template-columns: 40px 1fr 60px;
+    grid-template-columns: 36px 1fr 50px;
+    padding: 6px 8px;
+    font-size: 11px;
   }
 
   .skill-category,
   .skill-bar-container {
     display: none;
+  }
+
+  /* Contact App */
+  .contact-app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-sidebar {
+    padding: 10px;
+  }
+
+  .contact-body {
+    padding: 12px;
+  }
+
+  .contact-card {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .contact-card-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .contact-card-info h4 {
+    font-size: 12px;
+  }
+
+  .contact-card-info p {
+    font-size: 10px;
+  }
+
+  .contact-quote {
+    font-size: 11px;
+    padding: 12px;
+  }
+
+  /* Terminal App */
+  .terminal-app {
+    font-size: 12px;
+  }
+
+  .terminal-input-line input {
+    font-size: 12px;
+  }
+
+  /* Secret App */
+  .secret-app {
+    padding: 12px;
+  }
+
+  .secret-header {
+    font-size: 8px;
+    padding: 8px;
+  }
+
+  .secret-content {
+    font-size: 11px;
+  }
+
+  /* Boot Screen */
+  .boot-bios {
+    padding: 16px;
+    font-size: 11px;
+  }
+
+  .boot-logo {
+    font-size: 36px;
+  }
+
+  /* Clippy */
+  .clippy {
+    bottom: 52px;
+    right: 8px;
+  }
+
+  .clippy-bubble {
+    max-width: 220px;
+    font-size: 11px;
+  }
+
+  /* Notifications */
+  .notification {
+    right: 8px;
+    top: 8px;
+    max-width: calc(100vw - 16px);
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 380px) {
+  .desktop-icons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-card-links {
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .start-menu-item {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+}
+
+/* Reduce animations for older devices */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

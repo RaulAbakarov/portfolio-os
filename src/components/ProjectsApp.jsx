@@ -1,5 +1,12 @@
 const PROJECTS = [
   {
+    icon: '🌐',
+    name: 'The Internet Room',
+    desc: 'A minimalist shared digital room where only one visitor can be present at any given time, globally.',
+    tags: ['Node.js', 'Express', 'WebSocket'],
+    repo: 'https://github.com/RaulAbakarov/the_internet_room',
+  },
+  {
     icon: '📝',
     name: 'Affiliate Blog',
     desc: 'SEO-optimized blog platform with modern UI, responsive design, and blazing fast performance.',
@@ -49,31 +56,30 @@ const PROJECTS = [
     name: 'Flask App',
     desc: 'Python backend application with RESTful API endpoints and database integration.',
     tags: ['Python', 'Flask', 'SQLite'],
-    demo: 'https://raulabakarov.github.io/flask-app/',
-    repo: 'https://github.com/RaulAbakarov/flask-app',
+    repo: 'https://github.com/RaulAbakarov/my-flask-app',
   },
   {
     icon: '💪',
     name: 'Gym Website',
     desc: 'Responsive fitness website with modern design, class schedules, and membership plans.',
     tags: ['HTML', 'CSS', 'JavaScript'],
-    demo: 'https://raulabakarov.github.io/gym-website/',
-    repo: 'https://github.com/RaulAbakarov/gym-website',
+    demo: 'https://raulabakarov.github.io/GymWebsite/',
+    repo: 'https://github.com/RaulAbakarov/GymWebsite',
   },
   {
     icon: '🧘',
     name: 'Breath Meditation',
     desc: 'Calming meditation web app with breathing exercises and ambient sound.',
     tags: ['HTML', 'CSS', 'JavaScript'],
-    demo: 'https://raulabakarov.github.io/breath-meditation/',
-    repo: 'https://github.com/RaulAbakarov/breath-meditation',
+    demo: 'https://raulabakarov.github.io/BreathMeditationWebsite/',
+    repo: 'https://github.com/RaulAbakarov/BreathMeditationWebsite',
   },
   {
     icon: '🧩',
     name: 'Codeforces Solutions',
     desc: 'Competitive programming solutions in Python. Algorithm battles and optimization glory.',
     tags: ['Python', 'Algorithms', 'CP'],
-    repo: 'https://github.com/RaulAbakarov/Codeforces',
+    repo: 'https://github.com/RaulAbakarov/codeforces',
   },
 ]
 
