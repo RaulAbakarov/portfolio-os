@@ -163,7 +163,7 @@ const COMMANDS = {
       return [
         { text: '    \\_______________/', cls: 'accent' },
         { text: '   __/__|______|__\\__', cls: 'accent' },
-        { text: '  /⭕⭕_______⭕⭕\\', cls: 'accent' },
+        { text: '  /⭕⭕_________⭕⭕\\', cls: 'accent' },
         { text: '  |__/__GTR-R34__\\__|', cls: 'accent' },
         { text: '  \\©©__|_|_|_|_|__©©/', cls: 'accent' },
         { text: '' },
