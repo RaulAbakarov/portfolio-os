@@ -43,21 +43,8 @@ const PROJECTS = [
     name: 'Battleship Game',
     desc: 'Interactive browser-based Battleship with AI opponent and strategic gameplay mechanics.',
     tags: ['JavaScript', 'HTML', 'CSS'],
+    demo: 'https://raulabakarov.github.io/Project/',
     repo: 'https://github.com/RaulAbakarov/Project',
-  },
-  {
-    icon: '🏠',
-    name: 'My Blog App',
-    desc: 'Full-stack blog with React frontend, Node.js backend, and content management.',
-    tags: ['React', 'Node.js', 'MongoDB'],
-    repo: 'https://github.com/RaulAbakarov/my-blog-app',
-  },
-  {
-    icon: '🧪',
-    name: 'Flask App',
-    desc: 'Python backend application with RESTful API endpoints and database integration.',
-    tags: ['Python', 'Flask', 'SQLite'],
-    repo: 'https://github.com/RaulAbakarov/my-flask-app',
   },
   {
     icon: '💪',
