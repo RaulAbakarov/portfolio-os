@@ -161,11 +161,11 @@ const COMMANDS = {
     const isMobile = window.innerWidth <= 768
     if (isMobile) {
       return [
-        { text: '  \\_______________/', cls: 'accent' },
-        { text: '  __/__|______|__\\__', cls: 'accent' },
-        { text: '/\u2b55\u2b55_______\u2b55\u2b55\\', cls: 'accent' },
-        { text: '|__/__GTR-R34__\\__|', cls: 'accent' },
-        { text: '\\©©__|_|_|_|_|__©©/', cls: 'accent' },
+        { text: '   \\_______________/', cls: 'accent' },
+        { text: '   _/__|______|__\\_', cls: 'accent' },
+        { text: '  /OO|_________|OO\\', cls: 'accent' },
+        { text: '  |__/ GTR-R34 \\__|', cls: 'accent' },
+        { text: '  \\OO_|_|_|_|_|_OO/', cls: 'accent' },
         { text: '' },
         { text: '  raul@portfolio', cls: 'accent' },
         { text: '  ──────────────────', cls: 'accent' },
@@ -184,20 +184,20 @@ const COMMANDS = {
       ]
     }
     return [
-      { text: '  \\_______________/       raul@portfolio', cls: 'accent' },
-      { text: '  __/__|______|__\\__      ──────────────────', cls: 'accent' },
-      { text: '/\u2b55\u2b55_______\u2b55\u2b55\\     OS: Portfolio OS v3.14', cls: 'accent' },
-      { text: '|__/__GTR-R34__\\__|     Host: The Internet', cls: '' },
-      { text: '\\©©__|_|_|_|_|__©©/     Kernel: React 18', cls: '' },
-      { text: '                        Uptime: ∞ hours', cls: '' },
-      { text: '                        Packages: 847 (npm)', cls: '' },
-      { text: '                        Shell: zsh + oh-my-zsh', cls: '' },
-      { text: '                        Editor: Neovim', cls: 'gold' },
-      { text: '                        Theme: Tokyo Night', cls: '' },
-      { text: '                        Terminal: Alacritty', cls: '' },
-      { text: '                        CPU: Caffeine-Powered', cls: '' },
-      { text: '                        GPU: Pure Imagination', cls: '' },
-      { text: '                        Memory: Full of bugs', cls: '' },
+      { text: '   \\_______________/        raul@portfolio', cls: 'accent' },
+      { text: '   _/__|______|__\\_         ──────────────────', cls: 'accent' },
+      { text: '  /OO|_________|OO\\        OS: Portfolio OS v3.14', cls: 'accent' },
+      { text: '  |__/ GTR-R34 \\__|        Host: The Internet', cls: '' },
+      { text: '  \\OO_|_|_|_|_|_OO/        Kernel: React 18', cls: '' },
+      { text: '                            Uptime: ∞ hours', cls: '' },
+      { text: '                            Packages: 847 (npm)', cls: '' },
+      { text: '                            Shell: zsh + oh-my-zsh', cls: '' },
+      { text: '                            Editor: Neovim', cls: 'gold' },
+      { text: '                            Theme: Tokyo Night', cls: '' },
+      { text: '                            Terminal: Alacritty', cls: '' },
+      { text: '                            CPU: Caffeine-Powered', cls: '' },
+      { text: '                            GPU: Pure Imagination', cls: '' },
+      { text: '                            Memory: Full of bugs', cls: '' },
     ]
   },
 
