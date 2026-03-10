@@ -1,10 +1,11 @@
 const PROJECTS = [
   {
-    icon: '🌐',
-    name: 'The Internet Room',
-    desc: 'A minimalist shared digital room where only one visitor can be present at any given time, globally.',
-    tags: ['Node.js', 'Express', 'WebSocket'],
-    repo: 'https://github.com/RaulAbakarov/the_internet_room',
+    icon: '🎓',
+    name: 'Semestr Bali',
+    desc: 'Semester grade calculator for university students with dynamic inputs, smart scoring, and confetti celebrations.',
+    tags: ['React', 'Vite', 'CSS'],
+    demo: 'https://www.semestrbali.site/',
+    repo: 'https://github.com/RaulAbakarov/semestr-bali',
   },
   {
     icon: '📝',
