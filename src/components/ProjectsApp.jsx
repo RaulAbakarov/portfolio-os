@@ -11,7 +11,7 @@ const PROJECTS = [
     name: 'Affiliate Blog',
     desc: 'SEO-optimized blog platform with modern UI, responsive design, and blazing fast performance.',
     tags: ['TypeScript', 'Vite', 'CSS'],
-    demo: 'https://raulabakarov.github.io/affiliate-blog/',
+    demo: 'https://oriflamebyvusale.vercel.app/',
     repo: 'https://github.com/RaulAbakarov/affiliate-blog',
   },
   {
