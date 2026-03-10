@@ -161,14 +161,11 @@ const COMMANDS = {
     const isMobile = window.innerWidth <= 768
     if (isMobile) {
       return [
-        { text: '      /\\@) (@/\\', cls: 'accent' },
-        { text: '  nn       Y       nn', cls: 'accent' },
-        { text: "  'Y   ___H___   Y'", cls: 'accent' },
-        { text: '   \\  |~[o_o]~|  /', cls: 'accent' },
-        { text: '    \\ |T\'T\'T\'T| /', cls: '' },
-        { text: '     \\|_|_|_|_|/', cls: '' },
-        { text: '    / A \\  / A \\', cls: '' },
-        { text: '   |___|  |___|', cls: '' },
+        { text: '  \\_______________/', cls: 'accent' },
+        { text: '  __/__|______|__\\__', cls: 'accent' },
+        { text: '/\u2b55\u2b55_______\u2b55\u2b55\\', cls: 'accent' },
+        { text: '|__/__GTR-R34__\\__|', cls: 'accent' },
+        { text: '\\©©__|_|_|_|_|__©©/', cls: 'accent' },
         { text: '' },
         { text: '  raul@portfolio', cls: 'accent' },
         { text: '  ──────────────────', cls: 'accent' },
@@ -187,14 +184,14 @@ const COMMANDS = {
       ]
     }
     return [
-      { text: '      /\\@) (@/\\          raul@portfolio', cls: 'accent' },
-      { text: "  nn       Y       nn    ──────────────────", cls: 'accent' },
-      { text: "  'Y   ___H___   Y'     OS: Portfolio OS v3.14", cls: 'accent' },
-      { text: '   \\  |~[o_o]~|  /      Host: The Internet', cls: '' },
-      { text: "    \\ |T'T'T'T| /       Kernel: React 18", cls: '' },
-      { text: '     \\|_|_|_|_|/        Uptime: ∞ hours', cls: '' },
-      { text: '    / A \\  / A \\        Packages: 847 (npm)', cls: '' },
-      { text: '   |___|  |___|         Shell: zsh + oh-my-zsh', cls: '' },
+      { text: '  \\_______________/       raul@portfolio', cls: 'accent' },
+      { text: '  __/__|______|__\\__      ──────────────────', cls: 'accent' },
+      { text: '/\u2b55\u2b55_______\u2b55\u2b55\\     OS: Portfolio OS v3.14', cls: 'accent' },
+      { text: '|__/__GTR-R34__\\__|     Host: The Internet', cls: '' },
+      { text: '\\©©__|_|_|_|_|__©©/     Kernel: React 18', cls: '' },
+      { text: '                        Uptime: ∞ hours', cls: '' },
+      { text: '                        Packages: 847 (npm)', cls: '' },
+      { text: '                        Shell: zsh + oh-my-zsh', cls: '' },
       { text: '                        Editor: Neovim', cls: 'gold' },
       { text: '                        Theme: Tokyo Night', cls: '' },
       { text: '                        Terminal: Alacritty', cls: '' },
