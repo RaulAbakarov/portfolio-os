@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function BSOD({ message, onDismiss }) {
+  const { t } = useLanguage()
+  const b = t.bsod
   const [percent, setPercent] = useState(0)
 
   useEffect(() => {
@@ -29,16 +32,16 @@ export default function BSOD({ message, onDismiss }) {
   return (
     <div className="bsod" onClick={onDismiss}>
       <div className="bsod-emoticon">:(</div>
-      <h2>Your portfolio ran into a problem.</h2>
+      <h2>{b.title}</h2>
       <p>
-        We're just collecting some error info, and then we'll restart for you.
+        {b.collecting}
         <br /><br />
-        {percent}% complete
+        {percent}% {b.complete}
       </p>
       <p className="bsod-small">
-        Stop code: {message}
+        {b.stopCode} {message}
         <br />
-        If you'd like to know more, search online for: "why did I click that"
+        {b.searchOnline}
       </p>
       <div className="bsod-qr">
         {qrPattern.flat().map((cell, i) => (
@@ -46,7 +49,7 @@ export default function BSOD({ message, onDismiss }) {
         ))}
       </div>
       <p className="bsod-small" style={{ marginTop: 20 }}>
-        Click anywhere to reboot...
+        {b.clickToReboot}
       </p>
     </div>
   )

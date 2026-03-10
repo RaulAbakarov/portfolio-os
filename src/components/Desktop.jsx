@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
 import Window from './Window'
 import TerminalApp from './TerminalApp'
 import AboutApp from './AboutApp'
@@ -10,58 +11,46 @@ import Clippy from './Clippy'
 import MatrixRain from './MatrixRain'
 import Notification from './Notification'
 
-const APPS = {
+const APP_DEFAULTS = {
   terminal: {
     id: 'terminal',
-    title: 'Terminal.sh',
     icon: '🖥️',
     desktopIcon: '🖥️',
-    label: 'Terminal.sh',
     defaultPos: { x: 180, y: 50 },
     defaultSize: { w: 680, h: 460 },
   },
   about: {
     id: 'about',
-    title: 'About.exe',
     icon: '👤',
     desktopIcon: '👤',
-    label: 'About.exe',
     defaultPos: { x: 220, y: 70 },
     defaultSize: { w: 550, h: 520 },
   },
   projects: {
     id: 'projects',
-    title: 'Projects.dll — File Explorer',
     icon: '📂',
     desktopIcon: '📂',
-    label: 'Projects.dll',
     defaultPos: { x: 260, y: 40 },
     defaultSize: { w: 750, h: 530 },
   },
   skills: {
     id: 'skills',
-    title: 'Skills.sys — Task Manager',
     icon: '⚡',
     desktopIcon: '⚡',
-    label: 'Skills.sys',
     defaultPos: { x: 200, y: 80 },
     defaultSize: { w: 700, h: 480 },
   },
   contact: {
     id: 'contact',
-    title: 'Contact.bat — Mail Client',
     icon: '✉️',
     desktopIcon: '✉️',
-    label: 'Contact.bat',
     defaultPos: { x: 300, y: 60 },
     defaultSize: { w: 520, h: 480 },
   },
   secret: {
     id: 'secret',
-    title: 'secret.txt — [CLASSIFIED]',
     icon: '🔒',
     desktopIcon: '🔒',
-    label: 'secret.txt',
     defaultPos: { x: 340, y: 90 },
     defaultSize: { w: 500, h: 450 },
   },
@@ -70,6 +59,7 @@ const APPS = {
 const DESKTOP_ICONS = ['about', 'terminal', 'projects', 'skills', 'contact', 'secret']
 
 export default function Desktop({ triggerBSOD }) {
+  const { lang, changeLang, t } = useLanguage()
   const [openWindows, setOpenWindows] = useState(['about'])
   const [minimizedWindows, setMinimizedWindows] = useState([])
   const [focusedWindow, setFocusedWindow] = useState('about')
@@ -80,25 +70,42 @@ export default function Desktop({ triggerBSOD }) {
   const [clock, setClock] = useState('')
   const [clockDate, setClockDate] = useState('')
 
+  const getApps = useCallback(() => {
+    const appTrans = t.apps
+    const apps = {}
+    for (const key of Object.keys(APP_DEFAULTS)) {
+      apps[key] = {
+        ...APP_DEFAULTS[key],
+        title: appTrans[key].title,
+        label: appTrans[key].label,
+      }
+    }
+    return apps
+  }, [t])
+
+  const APPS = getApps()
+
   // Clock
   useEffect(() => {
+    const localeMap = { en: 'en-US', az: 'az-AZ', ru: 'ru-RU' }
+    const locale = localeMap[lang] || 'en-US'
     const update = () => {
       const now = new Date()
-      setClock(now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }))
-      setClockDate(now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }))
+      setClock(now.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' }))
+      setClockDate(now.toLocaleDateString(locale, { month: 'short', day: 'numeric' }))
     }
     update()
     const interval = setInterval(update, 1000)
     return () => clearInterval(interval)
-  }, [])
+  }, [lang])
 
   // Welcome notification
   useEffect(() => {
     const timer = setTimeout(() => {
       setNotification({
         icon: '👋',
-        title: 'Welcome to Portfolio OS',
-        body: 'Double-click desktop icons to explore. Try the Terminal for a retro experience!',
+        title: t.desktop.welcomeTitle,
+        body: t.desktop.welcomeBody,
       })
     }, 1000)
     return () => clearTimeout(timer)
@@ -209,13 +216,13 @@ export default function Desktop({ triggerBSOD }) {
           onClick={() => {
             setNotification({
               icon: '🗑️',
-              title: 'Recycle Bin',
-              body: 'Contains: 847 deleted TODO comments, 3 abandoned side projects, and your free time.',
+              title: t.desktop.recycleBin,
+              body: t.desktop.recycleBinBody,
             })
           }}
         >
           <div className="desktop-icon-img">🗑️</div>
-          <div className="desktop-icon-label">Recycle Bin</div>
+          <div className="desktop-icon-label">{t.desktop.recycleBin}</div>
         </div>
       </div>
 
@@ -250,7 +257,7 @@ export default function Desktop({ triggerBSOD }) {
             <div className="start-menu-avatar">R</div>
             <div className="start-menu-user">
               <h3>Raul Abakarov</h3>
-              <p>Full Stack Developer</p>
+              <p>{t.desktop.fullStackDeveloper}</p>
             </div>
           </div>
           <div className="start-menu-items">
@@ -269,22 +276,22 @@ export default function Desktop({ triggerBSOD }) {
               onClick={() => { setShowMatrix(prev => !prev); setStartMenuOpen(false) }}
             >
               <span className="start-menu-item-icon">🟢</span>
-              <span>{showMatrix ? 'Disable Matrix Mode' : 'Enable Matrix Mode'}</span>
+              <span>{showMatrix ? t.desktop.disableMatrix : t.desktop.enableMatrix}</span>
             </div>
             <div
               className="start-menu-item"
               onClick={() => { setShowClippy(true); setStartMenuOpen(false) }}
             >
               <span className="start-menu-item-icon">📎</span>
-              <span>Summon Clippy</span>
+              <span>{t.desktop.summonClippy}</span>
             </div>
           </div>
           <div className="start-menu-footer">
-            <span>Portfolio OS v3.14</span>
+            <span>{t.desktop.portfolioVersion}</span>
             <span
               className="start-menu-power"
               onClick={() => triggerBSOD('VOLUNTARY_SHUTDOWN')}
-              title="Shut Down"
+              title={t.desktop.shutDown}
             >
               ⏻
             </span>
@@ -299,7 +306,7 @@ export default function Desktop({ triggerBSOD }) {
           onClick={() => setStartMenuOpen(prev => !prev)}
         >
           <span className="taskbar-start-icon">⬡</span>
-          <span className="taskbar-start-text">START</span>
+          <span className="taskbar-start-text">{t.desktop.start}</span>
         </div>
 
         <div className="taskbar-divider" />
@@ -322,17 +329,29 @@ export default function Desktop({ triggerBSOD }) {
         </div>
 
         <div className="taskbar-tray">
+          {/* Language Selector */}
+          <div className="lang-selector">
+            {['en', 'az', 'ru'].map(code => (
+              <button
+                key={code}
+                className={`lang-btn ${lang === code ? 'active' : ''}`}
+                onClick={() => changeLang(code)}
+              >
+                {t.langSelector[code]}
+              </button>
+            ))}
+          </div>
           <span
             style={{ cursor: 'pointer', fontSize: 16 }}
             onClick={() => setShowClippy(prev => !prev)}
-            title="Toggle Clippy"
+            title={t.desktop.toggleClippy}
           >
             📎
           </span>
           <span
             style={{ cursor: 'pointer', fontSize: 16 }}
             onClick={() => setShowMatrix(prev => !prev)}
-            title="Toggle Matrix"
+            title={t.desktop.toggleMatrix}
           >
             {showMatrix ? '🔴' : '🟢'}
           </span>

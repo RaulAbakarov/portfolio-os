@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Notification({ icon, title, body, duration = 5000, onDismiss }) {
+  const { t } = useLanguage()
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {
@@ -20,7 +22,7 @@ export default function Notification({ icon, title, body, duration = 5000, onDis
         <span className="notification-title">{title}</span>
       </div>
       <div className="notification-body">{body}</div>
-      <div className="notification-time">Just now</div>
+      <div className="notification-time">{t.notification.justNow}</div>
     </div>
   )
 }

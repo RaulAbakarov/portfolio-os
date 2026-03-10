@@ -1,4 +1,9 @@
+import { useLanguage } from '../i18n/LanguageContext'
+
 export default function AboutApp() {
+  const { t } = useLanguage()
+  const a = t.about
+
   return (
     <div className="about-app">
       <div className="about-hero">
@@ -13,80 +18,76 @@ export default function AboutApp() {
           <div className="about-avatar-ring" />
         </div>
         <div className="about-name">
-          <span className="glitch">Raul Abakarov</span>
+          <span className="glitch">{a.name}</span>
         </div>
-        <div className="about-title">Full Stack Developer</div>
-        <div className="about-location">📍 Baku, Azerbaijan 🇦🇿</div>
+        <div className="about-title">{a.title}</div>
+        <div className="about-location">📍 {a.location} 🇦🇿</div>
       </div>
 
       <div className="about-section">
-        <div className="about-section-title">About Me</div>
+        <div className="about-section-title">{a.sectionAbout}</div>
         <div className="about-bio">
-          I turn <strong>complex ideas</strong> into elegant, user-friendly software.
-          From interactive web applications to game development — I love exploring
-          the full spectrum of what code can create.
+          <span dangerouslySetInnerHTML={{ __html: a.bio1 }} />
           <br /><br />
-          Currently working on <strong>full-stack web applications</strong> with React & TypeScript.
-          Sharpening my skills in <strong>algorithms & system design</strong>.
-          Building games with Python/Pygame in my spare time.
+          <span dangerouslySetInnerHTML={{ __html: a.bio2 }} />
           <br /><br />
-          Open to <strong>freelance projects</strong> and collaborations. Let's build something absurd together.
+          <span dangerouslySetInnerHTML={{ __html: a.bio3 }} />
         </div>
       </div>
 
       <div className="about-section">
-        <div className="about-section-title">Quick Stats</div>
+        <div className="about-section-title">{a.quickStats}</div>
         <div className="about-stats">
           <div className="about-stat">
             <div className="about-stat-value">25+</div>
-            <div className="about-stat-label">Repositories</div>
+            <div className="about-stat-label">{a.repositories}</div>
           </div>
           <div className="about-stat">
             <div className="about-stat-value">∞</div>
-            <div className="about-stat-label">Coffee Consumed</div>
+            <div className="about-stat-label">{a.coffeeConsumed}</div>
           </div>
           <div className="about-stat">
             <div className="about-stat-value">847</div>
-            <div className="about-stat-label">Neovim Revisions</div>
+            <div className="about-stat-label">{a.neovimRevisions}</div>
           </div>
         </div>
       </div>
 
       <div className="about-section">
-        <div className="about-section-title">Fun Facts</div>
+        <div className="about-section-title">{a.funFacts}</div>
         <div className="about-fun-facts">
           <div className="about-fun-fact">
             <span className="about-fun-fact-icon">🔭</span>
-            <span>Currently building full-stack web apps with React & TypeScript at 3 AM because "one more feature" is a lifestyle.</span>
+            <span>{a.funFact1}</span>
           </div>
           <div className="about-fun-fact">
             <span className="about-fun-fact-icon">🎮</span>
-            <span>Building games with Python/Pygame in my spare time. The FlappyBird clone was "just for practice." (I scored 847.)</span>
+            <span>{a.funFact2}</span>
           </div>
           <div className="about-fun-fact">
             <span className="about-fun-fact-icon">🐧</span>
-            <span>I customize my Neovim config for fun. My dotfiles repo has more commits than most of my actual projects.</span>
+            <span>{a.funFact3}</span>
           </div>
           <div className="about-fun-fact">
             <span className="about-fun-fact-icon">🧠</span>
-            <span>Active on Codeforces and LeetCode. I solve algorithmic puzzles the way some people do crosswords — obsessively.</span>
+            <span>{a.funFact4}</span>
           </div>
           <div className="about-fun-fact">
             <span className="about-fun-fact-icon">☕</span>
-            <span>My blood type is technically "Cold Brew Positive." The coffee machine is a legitimate development dependency.</span>
+            <span>{a.funFact5}</span>
           </div>
         </div>
       </div>
 
       <div className="about-section" style={{ borderBottom: 'none' }}>
-        <div className="about-section-title">Current Status</div>
+        <div className="about-section-title">{a.currentStatus}</div>
         <div className="about-bio" style={{ fontFamily: 'var(--font-mono)', fontSize: 12 }}>
           <span style={{ color: 'var(--accent)' }}>const</span> raul = {'{'}<br />
-          &nbsp;&nbsp;role: <span style={{ color: 'var(--accent-tertiary)' }}>"Full Stack Developer"</span>,<br />
-          &nbsp;&nbsp;location: <span style={{ color: 'var(--accent-tertiary)' }}>"Baku, Azerbaijan"</span>,<br />
-          &nbsp;&nbsp;currentFocus: <span style={{ color: 'var(--accent-tertiary)' }}>"Building scalable web apps"</span>,<br />
+          &nbsp;&nbsp;role: <span style={{ color: 'var(--accent-tertiary)' }}>{a.codeRole}</span>,<br />
+          &nbsp;&nbsp;location: <span style={{ color: 'var(--accent-tertiary)' }}>{a.codeLocation}</span>,<br />
+          &nbsp;&nbsp;currentFocus: <span style={{ color: 'var(--accent-tertiary)' }}>{a.codeFocus}</span>,<br />
           &nbsp;&nbsp;communities: [<span style={{ color: 'var(--accent-tertiary)' }}>"Codeforces"</span>, <span style={{ color: 'var(--accent-tertiary)' }}>"LeetCode"</span>],<br />
-          &nbsp;&nbsp;funFact: <span style={{ color: 'var(--accent-tertiary)' }}>"I customize my Neovim config for fun 🐧"</span>,<br />
+          &nbsp;&nbsp;funFact: <span style={{ color: 'var(--accent-tertiary)' }}>{a.codeFunFact}</span>,<br />
           &nbsp;&nbsp;hireable: <span style={{ color: 'var(--accent)' }}>true</span>,<br />
           {'}'};
         </div>
