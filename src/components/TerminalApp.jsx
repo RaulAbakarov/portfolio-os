@@ -186,7 +186,7 @@ const COMMANDS = {
     return [
       { text: '    \\_______________/      raul@portfolio', cls: 'accent' },
       { text: '   __/__|______|__\\__      ──────────────────', cls: 'accent' },
-      { text: '  /⭕⭕_________⭕⭕\\        OS: Portfolio OS v3.14', cls: 'accent' },
+      { text: '  /⭕⭕__________⭕⭕\\        OS: Portfolio OS v3.14', cls: 'accent' },
       { text: '  |__/__GTR-R34__\\__|      Host: The Internet', cls: '' },
       { text: '  \\©©__|_|_|_|_|__©©/      Kernel: React 18', cls: '' },
       { text: '                           Uptime: ∞ hours', cls: '' },
