@@ -1,4 +1,5 @@
 import { useState, useCallback, lazy, Suspense } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import BootScreen from './components/BootScreen'
 
 const Desktop = lazy(() => import('./components/Desktop'))
@@ -22,13 +23,19 @@ export default function App() {
   }, [])
 
   if (phase === 'boot') {
-    return <BootScreen onComplete={handleBootComplete} />
+    return (
+      <>
+        <BootScreen onComplete={handleBootComplete} />
+        <Analytics />
+      </>
+    )
   }
 
   if (phase === 'bsod') {
     return (
       <Suspense fallback={null}>
         <BSOD message={bsodMessage} onDismiss={dismissBSOD} />
+        <Analytics />
       </Suspense>
     )
   }
@@ -36,6 +43,7 @@ export default function App() {
   return (
     <Suspense fallback={null}>
       <Desktop triggerBSOD={triggerBSOD} />
+      <Analytics />
     </Suspense>
   )
 }
