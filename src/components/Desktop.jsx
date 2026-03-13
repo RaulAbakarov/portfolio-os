@@ -54,9 +54,16 @@ const APP_DEFAULTS = {
     defaultPos: { x: 340, y: 90 },
     defaultSize: { w: 500, h: 450 },
   },
+  semestrBali: {
+    id: 'semestrBali',
+    icon: '/logo.png',
+    desktopIcon: '/logo.png',
+    iconFallback: '🧮',
+    externalUrl: 'https://www.semestrbali.site',
+  },
 }
 
-const DESKTOP_ICONS = ['about', 'terminal', 'projects', 'skills', 'contact', 'secret']
+const DESKTOP_ICONS = ['about', 'terminal', 'projects', 'skills', 'contact', 'secret', 'semestrBali']
 
 export default function Desktop({ triggerBSOD }) {
   const { lang, changeLang, t } = useLanguage()
@@ -69,6 +76,7 @@ export default function Desktop({ triggerBSOD }) {
   const [notification, setNotification] = useState(null)
   const [clock, setClock] = useState('')
   const [clockDate, setClockDate] = useState('')
+  const [brokenIcons, setBrokenIcons] = useState({})
 
   const getApps = useCallback(() => {
     const appTrans = t.apps
@@ -84,6 +92,28 @@ export default function Desktop({ triggerBSOD }) {
   }, [t])
 
   const APPS = getApps()
+
+  const handleIconError = useCallback((appId) => {
+    setBrokenIcons(prev => ({ ...prev, [appId]: true }))
+  }, [])
+
+  const IconRenderer = ({ app, className }) => {
+    const imageBroken = brokenIcons[app.id]
+    const hasImageIcon = typeof app.desktopIcon === 'string' && app.desktopIcon.startsWith('/')
+
+    if (hasImageIcon && !imageBroken) {
+      return (
+        <img
+          src={app.desktopIcon}
+          alt={app.label}
+          className={className}
+          onError={() => handleIconError(app.id)}
+        />
+      )
+    }
+
+    return <>{app.iconFallback || app.desktopIcon}</>
+  }
 
   // Clock
   useEffect(() => {
@@ -127,6 +157,19 @@ export default function Desktop({ triggerBSOD }) {
     setFocusedWindow(appId)
     setStartMenuOpen(false)
   }, [openWindows])
+
+  const launchApp = useCallback((appId) => {
+    const app = APPS[appId]
+    if (!app) return
+
+    if (app.externalUrl) {
+      window.open(app.externalUrl, '_blank', 'noopener,noreferrer')
+      setStartMenuOpen(false)
+      return
+    }
+
+    openApp(appId)
+  }, [APPS, openApp])
 
   const closeApp = useCallback((appId) => {
     setOpenWindows(prev => prev.filter(id => id !== appId))
@@ -201,10 +244,12 @@ export default function Desktop({ triggerBSOD }) {
             <div
               key={appId}
               className="desktop-icon"
-              onDoubleClick={() => openApp(appId)}
-              onClick={() => openApp(appId)}
+              onDoubleClick={() => launchApp(appId)}
+              onClick={() => launchApp(appId)}
             >
-              <div className="desktop-icon-img">{app.desktopIcon}</div>
+              <div className="desktop-icon-img">
+                <IconRenderer app={app} className="desktop-icon-logo" />
+              </div>
               <div className="desktop-icon-label">{app.label}</div>
             </div>
           )
@@ -265,9 +310,13 @@ export default function Desktop({ triggerBSOD }) {
               <div
                 key={app.id}
                 className="start-menu-item"
-                onClick={() => openApp(app.id)}
+                onClick={() => launchApp(app.id)}
               >
-                <span className="start-menu-item-icon">{app.icon}</span>
+                <span className="start-menu-item-icon">
+                  {typeof app.icon === 'string' && app.icon.startsWith('/') && !brokenIcons[app.id]
+                    ? <img src={app.icon} alt={app.label} className="start-menu-item-logo" onError={() => handleIconError(app.id)} />
+                    : (app.iconFallback || app.icon)}
+                </span>
                 <span>{app.title}</span>
               </div>
             ))}

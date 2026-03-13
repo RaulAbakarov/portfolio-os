@@ -24,6 +24,7 @@ export default {
     skills: { title: 'Skills.sys — Task Manager', label: 'Skills.sys' },
     contact: { title: 'Contact.bat — Mail Client', label: 'Contact.bat' },
     secret: { title: 'secret.txt — [CLASSIFIED]', label: 'secret.txt' },
+    semestrBali: { title: 'Semestr Bali Hesablama', label: 'Semestr Bali Hesablama' },
   },
 
   // About

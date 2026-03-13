@@ -24,6 +24,7 @@ export default {
     skills: { title: 'Bacarıqlar.sys — Tapşırıq Meneceri', label: 'Bacarıqlar.sys' },
     contact: { title: 'Əlaqə.bat — Poçt', label: 'Əlaqə.bat' },
     secret: { title: 'gizli.txt — [GİZLİ]', label: 'gizli.txt' },
+    semestrBali: { title: 'Semestr Bali Hesablama', label: 'Semestr Bali Hesablama' },
   },
 
   // About
