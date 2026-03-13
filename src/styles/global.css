@@ -223,8 +223,8 @@ html, body, #root {
   position: absolute;
   top: 20px;
   left: 20px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 85px);
   gap: 8px;
   z-index: 10;
 }
