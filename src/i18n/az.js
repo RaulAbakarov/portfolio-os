@@ -102,6 +102,7 @@ export default {
     demo: 'Demo ↗',
     code: 'Kod ↗',
     desc: {
+      semestrBali: 'Universitet tələbələri üçün dinamik girişlər, ağıllı qiymətləndirmə və konfetti bayramları ilə semestr qiymət kalkulyatoru.',
       affiliateBlog: 'Müasir UI, responsiv dizayn və sürətli performans ilə SEO-optimallaşdırılmış bloq platforması.',
       dictionaryApp: 'Real-vaxt API inteqrasiyası, axtarış təklifləri və audio tələffüz ilə interaktiv lüğət.',
       cryptoDashboard: 'Canlı qiymətlər, qrafiklər və portfel icmalı ilə kriptovalyuta izləmə paneli.',

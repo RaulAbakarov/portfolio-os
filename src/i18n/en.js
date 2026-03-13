@@ -104,6 +104,7 @@ export default {
     demo: 'Demo ↗',
     code: 'Code ↗',
     desc: {
+      semestrBali: 'Semester grade calculator for university students with dynamic inputs, smart scoring, and confetti celebrations.',
       affiliateBlog: 'SEO-optimized blog platform with modern UI, responsive design, and blazing fast performance.',
       dictionaryApp: 'Interactive dictionary with real-time API integration, search suggestions, and audio pronunciation.',
       cryptoDashboard: 'Cryptocurrency tracking dashboard with live prices, charts, and portfolio overview.',
