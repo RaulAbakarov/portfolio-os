@@ -91,7 +91,13 @@ export default function DinoApp() {
   const spritesRef = useRef(null)
   const cactusCache = useRef({})
   const scoreRef = useRef(0)
+  const highScoreRef = useRef(
+    (() => { try { return parseInt(localStorage.getItem('dino-highscore')) || 0 } catch { return 0 } })()
+  )
   const [displayScore, setDisplayScore] = useState(0)
+  const [highScore, setHighScore] = useState(() => {
+    try { return parseInt(localStorage.getItem('dino-highscore')) || 0 } catch { return 0 }
+  })
   const [gameOver, setGameOver] = useState(false)
   const [started, setStarted] = useState(false)
 
@@ -261,6 +267,12 @@ export default function DinoApp() {
           hb.y + hb.h > groundY - o.h &&
           hb.y < groundY
         ) {
+          const final = Math.floor(g.score)
+          if (final > highScoreRef.current) {
+            highScoreRef.current = final
+            setHighScore(final)
+            try { localStorage.setItem('dino-highscore', String(final)) } catch {}
+          }
           setGameOver(true)
           return
         }
@@ -320,6 +332,10 @@ export default function DinoApp() {
       ctx.font = '14px monospace'
       ctx.textAlign = 'right'
       ctx.fillText(`Score: ${rounded}`, w - 10, 24)
+      if (highScoreRef.current > 0) {
+        ctx.fillStyle = 'rgba(0,255,136,0.4)'
+        ctx.fillText(`HI: ${highScoreRef.current}`, w - 10, 42)
+      }
 
       animRef.current = requestAnimationFrame(loop)
     }
@@ -343,6 +359,7 @@ export default function DinoApp() {
         }}>
           <div style={{ fontSize: 48, marginBottom: 16 }}>🦖</div>
           <div style={{ fontSize: 16, marginBottom: 8 }}>DINO GAME</div>
+          {highScore > 0 && <div style={{ fontSize: 12, marginBottom: 8, opacity: 0.5 }}>Best: {highScore}</div>}
           <div style={{ fontSize: 12, opacity: 0.7 }}>Press SPACE or tap to start</div>
         </div>
       )}
@@ -353,7 +370,8 @@ export default function DinoApp() {
           color: '#00ff88', fontFamily: 'monospace',
         }}>
           <div style={{ fontSize: 20, marginBottom: 8 }}>GAME OVER</div>
-          <div style={{ fontSize: 14, marginBottom: 16 }}>Score: {displayScore}</div>
+          <div style={{ fontSize: 14, marginBottom: 4 }}>Score: {displayScore}</div>
+          {highScore > 0 && <div style={{ fontSize: 12, marginBottom: 12, opacity: 0.5 }}>Best: {highScore}</div>}
           <div style={{ fontSize: 12, opacity: 0.7 }}>Press SPACE or tap to restart</div>
         </div>
       )}
