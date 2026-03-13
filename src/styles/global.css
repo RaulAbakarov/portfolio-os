@@ -2391,7 +2391,7 @@ html, body, #root {
 
 .github-stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-bottom: 18px;
 }
@@ -2438,6 +2438,49 @@ html, body, #root {
   margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.github-contrib-summary {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-dim);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.github-contrib-graph {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.github-contrib-cell {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  min-width: 6px;
+  min-height: 6px;
+}
+
+.github-contrib-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+  font-size: 9px;
+  color: var(--text-dim);
+}
+
+.github-contrib-legend .github-contrib-cell {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
 }
 
 .github-langs {
