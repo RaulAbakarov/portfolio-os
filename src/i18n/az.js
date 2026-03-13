@@ -25,6 +25,7 @@ export default {
     contact: { title: 'Əlaqə.bat — Poçt', label: 'Əlaqə.bat' },
     secret: { title: 'gizli.txt — [GİZLİ]', label: 'gizli.txt' },
     dino: { title: 'Dino Oyunu', label: 'Dino Oyunu' },
+    github: { title: 'GitHub.stat — Statistika Monitoru', label: 'GitHub.stat' },
   },
 
   // About
@@ -374,5 +375,19 @@ export default {
     en: 'EN',
     az: 'AZ',
     ru: 'RU',
+  },
+
+  // GitHub Stats
+  github: {
+    fetching: 'GitHub məlumatları yüklənir...',
+    error: 'GitHub statistikasını yükləmək alınmadı.',
+    viewOnGithub: 'GitHub-da bax ↗',
+    memberSince: 'Üzv olub',
+    repos: 'Repozitoriyalar',
+    stars: 'Ümumi Ulduzlar',
+    forks: 'Ümumi Forklar',
+    followers: 'İzləyicilər',
+    topLanguages: 'Əsas Dillər',
+    recentActivity: 'Son Yenilənənlər',
   },
 }

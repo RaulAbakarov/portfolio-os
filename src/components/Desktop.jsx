@@ -8,6 +8,7 @@ import SkillsApp from './SkillsApp'
 import ContactApp from './ContactApp'
 import SecretApp from './SecretApp'
 import DinoApp from './DinoApp'
+import GitHubStatsApp from './GitHubStatsApp'
 import Clippy from './Clippy'
 import MatrixRain from './MatrixRain'
 import Notification from './Notification'
@@ -62,9 +63,16 @@ const APP_DEFAULTS = {
     defaultPos: { x: 240, y: 60 },
     defaultSize: { w: 700, h: 400 },
   },
+  github: {
+    id: 'github',
+    icon: '🐙',
+    desktopIcon: '🐙',
+    defaultPos: { x: 260, y: 50 },
+    defaultSize: { w: 620, h: 520 },
+  },
 }
 
-const DESKTOP_ICONS = ['about', 'terminal', 'projects', 'skills', 'contact', 'secret', 'dino']
+const DESKTOP_ICONS = ['about', 'terminal', 'projects', 'skills', 'contact', 'github', 'secret', 'dino']
 
 export default function Desktop({ triggerBSOD }) {
   const { lang, changeLang, t } = useLanguage()
@@ -226,6 +234,8 @@ export default function Desktop({ triggerBSOD }) {
         return <SecretApp />
       case 'dino':
         return <DinoApp />
+      case 'github':
+        return <GitHubStatsApp />
       default:
         return null
     }

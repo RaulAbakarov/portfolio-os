@@ -25,6 +25,7 @@ export default {
     contact: { title: 'Contact.bat — Mail Client', label: 'Contact.bat' },
     secret: { title: 'secret.txt — [CLASSIFIED]', label: 'secret.txt' },
     dino: { title: 'Dino Game', label: 'Dino Game' },
+    github: { title: 'GitHub.stat — Stats Monitor', label: 'GitHub.stat' },
   },
 
   // About
@@ -375,5 +376,19 @@ export default {
     en: 'EN',
     az: 'AZ',
     ru: 'RU',
+  },
+
+  // GitHub Stats
+  github: {
+    fetching: 'Fetching GitHub data...',
+    error: 'Failed to load GitHub stats.',
+    viewOnGithub: 'View on GitHub ↗',
+    memberSince: 'Member since',
+    repos: 'Repositories',
+    stars: 'Total Stars',
+    forks: 'Total Forks',
+    followers: 'Followers',
+    topLanguages: 'Top Languages',
+    recentActivity: 'Recently Updated',
   },
 }

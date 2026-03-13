@@ -25,6 +25,7 @@ export default {
     contact: { title: 'Контакт.bat — Почта', label: 'Контакт.bat' },
     secret: { title: 'секрет.txt — [ЗАСЕКРЕЧЕНО]', label: 'секрет.txt' },
     dino: { title: 'Игра Дино', label: 'Игра Дино' },
+    github: { title: 'GitHub.stat — Монитор Статистики', label: 'GitHub.stat' },
   },
 
   // About
@@ -373,5 +374,19 @@ export default {
     en: 'EN',
     az: 'AZ',
     ru: 'RU',
+  },
+
+  // GitHub Stats
+  github: {
+    fetching: 'Загрузка данных GitHub...',
+    error: 'Не удалось загрузить статистику GitHub.',
+    viewOnGithub: 'Открыть на GitHub ↗',
+    memberSince: 'Участник с',
+    repos: 'Репозитории',
+    stars: 'Всего звёзд',
+    forks: 'Всего форков',
+    followers: 'Подписчики',
+    topLanguages: 'Основные языки',
+    recentActivity: 'Недавно обновлённые',
   },
 }
