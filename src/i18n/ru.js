@@ -24,7 +24,6 @@ export default {
     skills: { title: 'Навыки.sys — Диспетчер задач', label: 'Навыки.sys' },
     contact: { title: 'Контакт.bat — Почта', label: 'Контакт.bat' },
     secret: { title: 'секрет.txt — [ЗАСЕКРЕЧЕНО]', label: 'секрет.txt' },
-    semestrBali: { title: 'Semestr Bali Hesablama', label: 'Semestr Bali Hesablama' },
   },
 
   // About
@@ -103,7 +102,6 @@ export default {
     demo: 'Демо ↗',
     code: 'Код ↗',
     desc: {
-      semestrBali: 'Калькулятор семестровых оценок для студентов с динамическими полями, умной оценкой и конфетти.',
       affiliateBlog: 'SEO-оптимизированная блог-платформа с современным UI, адаптивным дизайном и высокой производительностью.',
       dictionaryApp: 'Интерактивный словарь с API-интеграцией в реальном времени, подсказками и аудио-произношением.',
       cryptoDashboard: 'Панель отслеживания криптовалют с живыми ценами, графиками и обзором портфеля.',

@@ -1,7 +1,6 @@
 import { useLanguage } from '../i18n/LanguageContext'
 
 const PROJECTS = [
-  { icon: '🎓', name: 'Semestr Bali', descKey: 'semestrBali', tags: ['React', 'Vite', 'CSS'], demo: 'https://www.semestrbali.site/', repo: 'https://github.com/RaulAbakarov/semestr-bali' },
   { icon: '📝', name: 'Affiliate Blog', descKey: 'affiliateBlog', tags: ['TypeScript', 'Vite', 'CSS'], demo: 'https://oriflamebyvusale.vercel.app/', repo: 'https://github.com/RaulAbakarov/affiliate-blog' },
   { icon: '📖', name: 'Dictionary Web App', descKey: 'dictionaryApp', tags: ['JavaScript', 'REST API', 'CSS'], demo: 'https://raulabakarov.github.io/DictionaryWebApp/', repo: 'https://github.com/RaulAbakarov/DictionaryWebApp' },
   { icon: '💹', name: 'Crypto Dashboard', descKey: 'cryptoDashboard', tags: ['HTML', 'CSS', 'JavaScript'], demo: 'https://raulabakarov.github.io/CryptoDashboard/', repo: 'https://github.com/RaulAbakarov/CryptoDashboard' },

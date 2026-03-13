@@ -24,7 +24,6 @@ export default {
     skills: { title: 'Bacarıqlar.sys — Tapşırıq Meneceri', label: 'Bacarıqlar.sys' },
     contact: { title: 'Əlaqə.bat — Poçt', label: 'Əlaqə.bat' },
     secret: { title: 'gizli.txt — [GİZLİ]', label: 'gizli.txt' },
-    semestrBali: { title: 'Semestr Bali Hesablama', label: 'Semestr Bali Hesablama' },
   },
 
   // About
@@ -103,7 +102,6 @@ export default {
     demo: 'Demo ↗',
     code: 'Kod ↗',
     desc: {
-      semestrBali: 'Universitet tələbələri üçün dinamik girişlər, ağıllı qiymətləndirmə və konfetti bayramları ilə semestr qiymət kalkulyatoru.',
       affiliateBlog: 'Müasir UI, responsiv dizayn və sürətli performans ilə SEO-optimallaşdırılmış bloq platforması.',
       dictionaryApp: 'Real-vaxt API inteqrasiyası, axtarış təklifləri və audio tələffüz ilə interaktiv lüğət.',
       cryptoDashboard: 'Canlı qiymətlər, qrafiklər və portfel icmalı ilə kriptovalyuta izləmə paneli.',

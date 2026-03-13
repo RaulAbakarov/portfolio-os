@@ -24,7 +24,6 @@ export default {
     skills: { title: 'Skills.sys — Task Manager', label: 'Skills.sys' },
     contact: { title: 'Contact.bat — Mail Client', label: 'Contact.bat' },
     secret: { title: 'secret.txt — [CLASSIFIED]', label: 'secret.txt' },
-    semestrBali: { title: 'Semestr Bali Hesablama', label: 'Semestr Bali Hesablama' },
   },
 
   // About
@@ -105,7 +104,6 @@ export default {
     demo: 'Demo ↗',
     code: 'Code ↗',
     desc: {
-      semestrBali: 'Semester grade calculator for university students with dynamic inputs, smart scoring, and confetti celebrations.',
       affiliateBlog: 'SEO-optimized blog platform with modern UI, responsive design, and blazing fast performance.',
       dictionaryApp: 'Interactive dictionary with real-time API integration, search suggestions, and audio pronunciation.',
       cryptoDashboard: 'Cryptocurrency tracking dashboard with live prices, charts, and portfolio overview.',

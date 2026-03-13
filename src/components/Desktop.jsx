@@ -54,16 +54,9 @@ const APP_DEFAULTS = {
     defaultPos: { x: 340, y: 90 },
     defaultSize: { w: 500, h: 450 },
   },
-  semestrBali: {
-    id: 'semestrBali',
-    icon: '/logo.png',
-    desktopIcon: '/logo.png',
-    iconFallback: '🧮',
-    externalUrl: 'https://www.semestrbali.site',
-  },
 }
 
-const DESKTOP_ICONS = ['about', 'terminal', 'projects', 'skills', 'contact', 'secret', 'semestrBali']
+const DESKTOP_ICONS = ['about', 'terminal', 'projects', 'skills', 'contact', 'secret']
 
 export default function Desktop({ triggerBSOD }) {
   const { lang, changeLang, t } = useLanguage()
