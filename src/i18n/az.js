@@ -24,6 +24,7 @@ export default {
     skills: { title: 'Bacarıqlar.sys — Tapşırıq Meneceri', label: 'Bacarıqlar.sys' },
     contact: { title: 'Əlaqə.bat — Poçt', label: 'Əlaqə.bat' },
     secret: { title: 'gizli.txt — [GİZLİ]', label: 'gizli.txt' },
+    dino: { title: 'Dino Oyunu', label: 'Dino Oyunu' },
   },
 
   // About

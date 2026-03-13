@@ -7,6 +7,7 @@ import ProjectsApp from './ProjectsApp'
 import SkillsApp from './SkillsApp'
 import ContactApp from './ContactApp'
 import SecretApp from './SecretApp'
+import DinoApp from './DinoApp'
 import Clippy from './Clippy'
 import MatrixRain from './MatrixRain'
 import Notification from './Notification'
@@ -54,9 +55,16 @@ const APP_DEFAULTS = {
     defaultPos: { x: 340, y: 90 },
     defaultSize: { w: 500, h: 450 },
   },
+  dino: {
+    id: 'dino',
+    icon: '🦕',
+    desktopIcon: '🦕',
+    defaultPos: { x: 240, y: 60 },
+    defaultSize: { w: 700, h: 400 },
+  },
 }
 
-const DESKTOP_ICONS = ['about', 'terminal', 'projects', 'skills', 'contact', 'secret']
+const DESKTOP_ICONS = ['about', 'terminal', 'projects', 'skills', 'contact', 'secret', 'dino']
 
 export default function Desktop({ triggerBSOD }) {
   const { lang, changeLang, t } = useLanguage()
@@ -216,6 +224,8 @@ export default function Desktop({ triggerBSOD }) {
         return <ContactApp />
       case 'secret':
         return <SecretApp />
+      case 'dino':
+        return <DinoApp />
       default:
         return null
     }

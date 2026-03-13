@@ -24,6 +24,7 @@ export default {
     skills: { title: 'Навыки.sys — Диспетчер задач', label: 'Навыки.sys' },
     contact: { title: 'Контакт.bat — Почта', label: 'Контакт.bat' },
     secret: { title: 'секрет.txt — [ЗАСЕКРЕЧЕНО]', label: 'секрет.txt' },
+    dino: { title: 'Игра Дино', label: 'Игра Дино' },
   },
 
   // About
